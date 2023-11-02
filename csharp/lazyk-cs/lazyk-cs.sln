@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33530.505
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lazyk-cs", "lazyk-cs.csproj", "{0ABC0610-A043-4281-AAF3-E978031D2EC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "lazyk-csTests", "..\lazyk-csTests\lazyk-csTests.csproj", "{D354CEB9-22B6-4FD6-87B0-B3E227AAB86E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ABC0610-A043-4281-AAF3-E978031D2EC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABC0610-A043-4281-AAF3-E978031D2EC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABC0610-A043-4281-AAF3-E978031D2EC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABC0610-A043-4281-AAF3-E978031D2EC6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D354CEB9-22B6-4FD6-87B0-B3E227AAB86E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D354CEB9-22B6-4FD6-87B0-B3E227AAB86E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D354CEB9-22B6-4FD6-87B0-B3E227AAB86E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D354CEB9-22B6-4FD6-87B0-B3E227AAB86E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2E195661-9BAF-403C-BCD9-C5F37F301561}
+	EndGlobalSection
+EndGlobal

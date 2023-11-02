@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "lazyk-cs": {
+      "commandName": "Project",
+      "commandLineArgs": "hello.lazy",
+      "workingDirectory": "..\\sample"
+    }
+  }
+}
