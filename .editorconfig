@@ -1,0 +1,13 @@
+root = true
+
+[*.lisp]
+tab_width = 8
+
+[*.scm]
+tab_width = 8
+
+[*.go]
+tab_width = 4
+
+[*.sh]
+tab_width = 8
