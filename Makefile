@@ -16,7 +16,7 @@ commonlisp: $(CL_FASL)
 test-unit-commonlisp: $(CL_FASL)
 	$(CL_LAZYK) test
 test-commonlisp: $(CL_FASL)
-	./run_tests $(CL_LAZYK) run
+	sh run_tests.sh $(CL_LAZYK) run
 
 
 CS_FILES = $(wildcard csharp/lazyk-cs/*.cs*)
@@ -28,7 +28,7 @@ csharp: $(CS_BIN)
 test-unit-csharp:
 	cd csharp && make test
 test-csharp: $(CS_BIN)
-	./run_tests $(CS_BIN)
+	sh run_tests.sh $(CS_BIN)
 
 
 GO_FILES = $(wildcard go/*.go) $(wildcard go/cmd/*.go)
@@ -40,7 +40,7 @@ go: $(GO_BIN)
 test-unit-go:
 	cd go && go test -v
 test-go: $(GO_BIN)
-	./run_tests $(GO_BIN)
+	sh run_tests.sh $(GO_BIN)
 
 
 OCAML_FILES = $(wildcard ocaml/*.ml) ocaml/Makefile
@@ -52,7 +52,7 @@ ocaml: $(OCAML_BIN)
 test-unit-ocaml: $(OCAML_FILES)
 	cd ocaml && make test
 test-ocaml: $(OCAML_BIN)
-	./run_tests $(OCAML_BIN)
+	sh run_tests.sh $(OCAML_BIN)
 
 
 PY_FILES = $(wildcard python/*.py)
@@ -60,7 +60,7 @@ PY_FILES = $(wildcard python/*.py)
 test-unit-python: $(PY_FILES)
 	cd python && python3 -m lazyk_test
 test-python: $(PY_FILES)
-	./run_tests python3 python/lazyk.py
+	sh run_tests.sh python3 python/lazyk.py
 
 
 RUBY_FILES = $(wildcard ruby/*.rb)
@@ -68,7 +68,7 @@ RUBY_FILES = $(wildcard ruby/*.rb)
 test-unit-ruby: $(RUBY_FILES)
 	ruby ruby/lazyk_test.rb
 test-ruby:
-	./run_tests ruby ruby/lazyk.rb
+	sh run_tests.sh ruby ruby/lazyk.rb
 
 
 SCHEME_FILES = $(wildcard scheme/*.scm)
@@ -76,7 +76,7 @@ SCHEME_FILES = $(wildcard scheme/*.scm)
 test-unit-scheme:
 	gosh scheme/lazyk-test.scm
 test-scheme:
-	./run_tests gosh scheme/lazyk.scm
+	sh run_tests.sh gosh scheme/lazyk.scm
 
 
 TS_FILES = $(wildcard typescript/*.ts)
@@ -84,7 +84,7 @@ TS_FILES = $(wildcard typescript/*.ts)
 test-unit-typescript: $(TS_FILES)
 	cd typescript && deno test
 test-typescript: $(TS_FILES)
-	./run_tests deno run --allow-read typescript/lazyk.ts
+	sh run_tests.sh deno run --allow-read typescript/lazyk.ts
 
 
 .PHONY: test-all
