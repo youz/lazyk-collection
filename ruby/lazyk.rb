@@ -255,16 +255,22 @@ class LazyK
     end
   end
 
-  def initialize(stdin = $stdin, stdout = $stdout)
+  def initialize(stdin = $stdin, stdout = $stdout, textmode = false)
     @stdout = stdout
     @stdout.binmode
     @stdin = stdin
+    @textmode = textmode
   end
 
   def readc()
     begin
       @stdout.flush
-      return @stdin.readbyte
+      b = @stdin.readbyte
+      if b == 13 && @textmode
+        return readc
+      else
+        return b
+      end
     rescue EOFError
       return 256
     end
@@ -303,22 +309,29 @@ class LazyK
 end
 
 def show_help_and_exit
-  puts "usage: ruby lazyk.rb prog.rb"
+  puts "Usage: ruby [-t] lazyk.rb prog.rb"
+  puts "Options"
+  puts "  -t : text mode (read crlf as lf)"
   exit(1)
 end
 
 if __FILE__ == $0
   if ARGV.length == 0
+    textmode = false
     if $stdin.tty?
       show_help_and_exit
     else
-      exit LazyK.new(StringIO.new("")).run($stdin.read)
+      exit LazyK.new(StringIO.new(""), textmode).run($stdin.read)
     end
   else
     if ARGV[0] == "-h" || ARGV[0] == "--help"
       show_help_and_exit
     else
-      exit LazyK.new($stdin, $stdout).run_file(ARGV[0])
+      if ARGV[0] == "-t"
+        textmode = true
+        ARGV.shift
+      end
+      exit LazyK.new($stdin, $stdout, textmode).run_file(ARGV[0])
     end
   end
 end
